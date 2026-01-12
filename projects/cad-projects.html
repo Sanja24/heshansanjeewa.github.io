@@ -10,67 +10,50 @@
 
 <header class="navbar">
   <div class="container nav-flex">
-    <a href="../index.html" class="logo">← Back</a>
-    <button id="theme-toggle">🌙</button>
+    <a href="../index.html" class="logo">Heshan<span>.</span></a>
+    <nav class="nav-menu">
+      <ul>
+        <li><a href="../index.html#projects">Projects</a></li>
+        <li><button id="theme-toggle">🌙</button></li>
+      </ul>
+    </nav>
+    <button class="nav-toggle">☰</button>
   </div>
 </header>
 
 <section class="section">
-  <div class="container fade-in">
-    <h1>CAD / CAM Projects</h1>
-    <p>
-      Mechanical design work focused on precision and manufacturability, including Tablet Sorting Heads and complex assemblies.
-    </p>
+  <div class="container">
+    <div class="fade-in">
+      <h1>CAD / CAM & Mechanical Design</h1>
+      <p style="margin: 1rem 0; color: var(--gray);">
+        Mechanical design work focused on precision and manufacturability, including Tablet Sorting Heads and complex assemblies.
+      </p>
+    </div>
 
-    <div class="cad-gallery">
-        <div class="gallery-item">
-            <img src="../assets/images/cad1.jpg" alt="TabSort CAD Design" class="gallery-img">
-            <div class="overlay-text">TabSort Sorting Head</div>
-        </div>
-        <div class="gallery-item">
-            <img src="../assets/images/cad2.jpg" alt="Mechanical Assembly" class="gallery-img">
-            <div class="overlay-text">Mechanical Assembly</div>
-        </div>
-        </div>
-
-    <h2>Technical Overview</h2>
-    <p>Detailed design utilizing SolidWorks for modeling and generating manufacturing-ready engineering drawings.</p>
+    <div id="dynamic-gallery" data-project="cad" data-count="2" class="slide-up"></div>
     
-    <div style="margin-top: 3rem;">
+    <div id="lightbox" class="lightbox-modal">
+        <span class="close-lightbox">&times;</span>
+        <img class="lightbox-content" id="lightbox-img">
+    </div>
+
+    <div class="fade-in delay-1" style="margin-top: 3rem;">
+      <h2>Technical Overview</h2>
+      <p style="margin-top: 1rem;">
+        Detailed design work utilizing SolidWorks for modeling and generating manufacturing-ready engineering drawings. Projects include mechanical assemblies, vibration analysis components, and custom hardware mounts.
+      </p>
+      
+      <div style="margin-top: 3rem;">
         <a href="../index.html#projects" class="btn-secondary">← Back to Portfolio</a>
+      </div>
     </div>
   </div>
 </section>
-
-<div id="lightbox" class="lightbox">
-    <span class="close-lightbox">&times;</span>
-    <img class="lightbox-content" id="lightbox-img">
-    <div id="caption"></div>
-</div>
 
 <footer class="footer">
   <p>© 2026 Heshan Sanjeewa</p>
 </footer>
 
 <script src="../js/main.js"></script>
-
-<script>
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = document.getElementById('lightbox-img');
-    const captionText = document.getElementById('caption');
-    const closeBtn = document.querySelector('.close-lightbox');
-
-    document.querySelectorAll('.gallery-img').forEach(image => {
-        image.onclick = () => {
-            lightbox.style.display = "block";
-            lightboxImg.src = image.src;
-            captionText.innerHTML = image.alt;
-        }
-    });
-
-    closeBtn.onclick = () => { lightbox.style.display = "none"; }
-    lightbox.onclick = (e) => { if(e.target !== lightboxImg) lightbox.style.display = "none"; }
-</script>
-
 </body>
 </html>
