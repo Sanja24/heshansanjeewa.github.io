@@ -11,6 +11,7 @@
 <header class="navbar">
   <div class="container nav-flex">
     <a href="../index.html" class="logo">← Back</a>
+    <button id="theme-toggle">🌙</button>
   </div>
 </header>
 
@@ -18,18 +19,30 @@
   <div class="container fade-in">
     <h1>CAD / CAM Projects</h1>
     <p>
-      TabSort CAD design and CAD/CAM work such as Tablet Sorting Head and mechanical assemblies. :contentReference[oaicite:12]{index=12}
+      TabSort CAD design and CAD/CAM work such as Tablet Sorting Head and mechanical assemblies.
     </p>
 
-    <img src="../assets/images/cad1.jpg" alt="CAD TabSort">
-    <img src="../assets/images/cad2.jpg" alt="CAD Assembly">
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 2rem 0;">
+        <img src="../assets/images/cad1.jpg" alt="CAD TabSort" style="width: 100%; border-radius: 8px;">
+        <img src="../assets/images/cad2.jpg" alt="CAD Assembly" style="width: 100%; border-radius: 8px;">
+    </div>
 
     <h2>Overview</h2>
     <p>Detailed mechanical design work focused on precision and manufacturability.</p>
+    
     <h2>Technologies</h2>
-    <p>SolidWorks · CAD Modeling · Engineering Drawings</p>
+    <p><strong>SolidWorks · CAD Modeling · Engineering Drawings</strong></p>
+
+    <div style="margin-top: 3rem;">
+        <a href="../index.html#projects" class="btn-secondary">← Back to Portfolio</a>
+    </div>
   </div>
 </section>
 
+<footer class="footer">
+  <p>© 2026 Heshan Sanjeewa</p>
+</footer>
+
+<script src="../js/main.js"></script>
 </body>
 </html>
