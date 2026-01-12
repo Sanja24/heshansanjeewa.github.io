@@ -181,3 +181,53 @@ nav a {
     display: none;
   }
 }
+
+/* Dark mode */
+body.dark {
+  background: #0f172a;
+  color: #e5e7eb;
+}
+
+body.dark .light-bg {
+  background: #020617;
+}
+
+body.dark .navbar {
+  background: #020617;
+}
+
+/* Mobile nav */
+.nav-toggle {
+  display: none;
+  font-size: 1.8rem;
+  background: none;
+  border: none;
+}
+
+@media (max-width: 768px) {
+  .nav-toggle {
+    display: block;
+  }
+
+  .nav-menu {
+    display: none;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background: white;
+    width: 100%;
+  }
+
+  body.dark .nav-menu {
+    background: #020617;
+  }
+
+  .nav-menu.active {
+    display: block;
+  }
+
+  nav ul {
+    flex-direction: column;
+    padding: 1rem;
+  }
+}
