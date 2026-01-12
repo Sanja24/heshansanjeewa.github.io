@@ -5,10 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Heshan Sanjeewa | Engineering Portfolio</title>
 
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-    <!-- CSS -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -21,88 +18,96 @@
                 <li><a href="#about">About</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
+                <li>
+                    <a class="cv-btn" href="assets/cv/Heshan_Sanjeewa_CV.pdf" download>
+                        Download CV
+                    </a>
+                </li>
             </ul>
         </nav>
     </div>
 </header>
 
-<!-- HERO -->
 <section class="hero section">
     <div class="container hero-flex">
         <div class="hero-text">
             <h1>Hi, I'm Heshan</h1>
-            <p class="subtitle">Tech Enthusiast from SLTC Research University</p>
+            <p class="subtitle">Mechatronic & Automation Engineer</p>
             <p>
-                I am a forward-thinking, solutions-driven Mechatronic Engineering intern with a passion for intelligent,
-                efficient, and innovative system design. I specialize in automation, embedded systems, and image processing.
+                Graduate engineer specializing in automation systems, embedded hardware,
+                and applied image processing for real-world engineering solutions.
             </p>
+
+            <div class="hero-actions">
+                <a href="assets/cv/Heshan_Sanjeewa_CV.pdf" class="btn-primary" download>
+                    Download CV
+                </a>
+                <a href="#projects" class="btn-secondary">
+                    View Projects
+                </a>
+            </div>
         </div>
+
         <div class="hero-image">
-            <img src="assets/images/hero-placeholder.jpg" alt="Profile Photo">
+            <img src="assets/images/hero.jpg" alt="Heshan Sanjeewa">
         </div>
     </div>
 </section>
 
-<!-- ABOUT -->
 <section id="about" class="section light-bg">
     <div class="container fade-in">
         <h2>About Me</h2>
         <p>
-            As a Mechatronic Engineering intern, I focus on integrating mechanical design, electronics, and software
-            to solve real-world engineering problems with innovation and precision. I thrive in multidisciplinary teams
-            and am actively seeking engineering roles.
+            I am a Mechatronic Engineering graduate with strong experience in automation,
+            embedded systems, CAD design, and machine vision. I am actively seeking
+            engineering roles where I can contribute to design, prototyping, and optimization.
         </p>
     </div>
 </section>
 
-<!-- PROJECTS -->
 <section id="projects" class="section">
     <div class="container">
-        <h2 class="fade-in">Projects</h2>
+        <h2>Projects</h2>
 
         <div class="projects-grid">
 
-            <div class="project-card slide-up">
-                <h3>Final Year Research — Nutrient Assessment</h3>
+            <a href="projects/nutrileaf.html" class="project-card slide-up">
+                <img src="assets/images/nutrileaf.jpg" alt="NUTRILEAF">
+                <h3>NUTRILEAF</h3>
                 <p>
-                    A non-destructive system that uses image processing and deep learning to detect nutrient deficiencies
-                    in maize leaves in real time.:contentReference[oaicite:1]{index=1}
+                    Image-based nutrient deficiency detection system for maize leaves.
                 </p>
-                <img src="assets/images/nutrileaf.jpg" alt="Nutrient Assessment">
-            </div>
+                <span>Python · OpenCV · TensorFlow</span>
+            </a>
 
-            <div class="project-card slide-up delay-1">
-                <h3>Medicine Dispensing System – TAB SORT 1.9</h3>
-                <p>
-                    Automated medicine dispensing using Arduino with a Python GUI that reads prescriptions, locates
-                    medicines, and controls actuators using G-code.:contentReference[oaicite:2]{index=2}
-                </p>
+            <a href="projects/tabsort.html" class="project-card slide-up delay-1">
                 <img src="assets/images/tabsort.jpg" alt="TAB SORT">
-            </div>
+                <h3>TAB SORT 1.9</h3>
+                <p>
+                    Automated medicine dispensing system with Arduino and Python GUI.
+                </p>
+                <span>Arduino · G-code · Automation</span>
+            </a>
 
-            <div class="project-card slide-up delay-2">
+            <a href="projects/cadcam.html" class="project-card slide-up delay-2">
+                <img src="assets/images/cadcam.jpg" alt="CAD CAM">
                 <h3>CAD / CAM Projects</h3>
                 <p>
-                    Computer-aided design work including TabSort device components such as tablet sorting head and
-                    other assemblies.:contentReference[oaicite:3]{index=3}
+                    Mechanical design and prototyping for automation systems.
                 </p>
-                <img src="assets/images/cadcam.jpg" alt="CAD CAM">
-            </div>
+                <span>SolidWorks · Manufacturing</span>
+            </a>
 
         </div>
     </div>
 </section>
 
-<!-- CONTACT -->
 <section id="contact" class="section light-bg">
     <div class="container fade-in">
         <h2>Contact</h2>
-        <p>If you’d like to connect or discuss opportunities:</p>
-        <ul class="contact-list">
-            <li>Email: <strong>your.email@example.com</strong></li>
-            <li>LinkedIn: <a href="https://www.linkedin.com/in/yourprofile" target="_blank">linkedin.com/in/yourprofile</a></li>
-            <li>GitHub: <a href="https://github.com/yourusername" target="_blank">github.com/yourusername</a></li>
-        </ul>
+        <p>Email: <strong>your.email@example.com</strong></p>
+        <p>LinkedIn: <a href="#" target="_blank">linkedin.com/in/yourprofile</a></p>
+        <p>GitHub: <a href="#" target="_blank">github.com/yourusername</a></p>
     </div>
 </section>
 
