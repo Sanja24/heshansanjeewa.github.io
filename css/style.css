@@ -44,3 +44,13 @@
 .project-card:hover {
     transform: translateY(-6px);
 }
+/* Add these if missing for multi-page consistency */
+.project-card img {
+    width: 100%;
+    border-radius: 6px;
+    object-fit: cover;
+}
+.hero-image img {
+    object-fit: cover;
+}
+
