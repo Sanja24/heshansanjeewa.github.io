@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Heshan Sanjeewa | Engineering Portfolio</title>
 
-    <!-- Google Font -->
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
     <!-- CSS -->
@@ -14,12 +14,11 @@
 <body>
 
 <header class="navbar">
-    <div class="container">
+    <div class="container nav-flex">
         <div class="logo">Heshan<span>.</span></div>
         <nav>
             <ul>
                 <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -28,86 +27,66 @@
 </header>
 
 <!-- HERO -->
-<section class="hero">
-    <div class="container">
-        <h1>Engineering & Automation Portfolio</h1>
-        <p>
-            Graduate engineer specializing in automation systems, embedded hardware,
-            and applied research. Focused on practical, low-cost, high-impact solutions.
-        </p>
-        <div class="hero-buttons">
-            <a href="#projects" class="btn-primary">View Projects</a>
-            <a href="https://github.com/" target="_blank" class="btn-secondary">GitHub</a>
+<section class="hero section">
+    <div class="container hero-flex">
+        <div class="hero-text">
+            <h1>Hi, I'm Heshan</h1>
+            <p class="subtitle">Tech Enthusiast from SLTC Research University</p>
+            <p>
+                I am a forward-thinking, solutions-driven Mechatronic Engineering intern with a passion for intelligent,
+                efficient, and innovative system design. I specialize in automation, embedded systems, and image processing.
+            </p>
+        </div>
+        <div class="hero-image">
+            <img src="assets/images/hero-placeholder.jpg" alt="Profile Photo">
         </div>
     </div>
 </section>
 
 <!-- ABOUT -->
-<section id="about" class="section">
-    <div class="container">
+<section id="about" class="section light-bg">
+    <div class="container fade-in">
         <h2>About Me</h2>
         <p>
-            I am a graduate engineer from Sri Lanka with strong interests in
-            automation, embedded systems, and applied computer vision.
-            My work combines mechanical design, electronics, and software
-            to solve real-world engineering problems.
+            As a Mechatronic Engineering intern, I focus on integrating mechanical design, electronics, and software
+            to solve real-world engineering problems with innovation and precision. I thrive in multidisciplinary teams
+            and am actively seeking engineering roles.
         </p>
-        <p>
-            I am actively seeking engineering and automation-focused roles
-            where I can contribute to system design, prototyping, and optimization.
-        </p>
-    </div>
-</section>
-
-<!-- SKILLS -->
-<section id="skills" class="section dark">
-    <div class="container">
-        <h2>Technical Skills</h2>
-        <div class="skills-grid">
-            <div class="skill-card">Python</div>
-            <div class="skill-card">C / C++</div>
-            <div class="skill-card">Arduino</div>
-            <div class="skill-card">Embedded Systems</div>
-            <div class="skill-card">Image Processing</div>
-            <div class="skill-card">TensorFlow</div>
-            <div class="skill-card">CAD Design</div>
-            <div class="skill-card">Automation Systems</div>
-        </div>
     </div>
 </section>
 
 <!-- PROJECTS -->
 <section id="projects" class="section">
     <div class="container">
-        <h2>Projects</h2>
+        <h2 class="fade-in">Projects</h2>
 
         <div class="projects-grid">
 
-            <div class="project-card">
-                <h3>NUTRILEAF</h3>
+            <div class="project-card slide-up">
+                <h3>Final Year Research — Nutrient Assessment</h3>
                 <p>
-                    Low-cost portable microscope-level camera system for detecting
-                    nutrient deficiencies in corn leaves using image processing.
+                    A non-destructive system that uses image processing and deep learning to detect nutrient deficiencies
+                    in maize leaves in real time.:contentReference[oaicite:1]{index=1}
                 </p>
-                <span>Python · OpenCV · TensorFlow · Hardware Integration</span>
+                <img src="assets/images/nutrileaf.jpg" alt="Nutrient Assessment">
             </div>
 
-            <div class="project-card">
-                <h3>Automated Medicine Dispensing System</h3>
+            <div class="project-card slide-up delay-1">
+                <h3>Medicine Dispensing System – TAB SORT 1.9</h3>
                 <p>
-                    G-code based automation system integrating Arduino control,
-                    stepper motors, DC motors, and a Python GUI.
+                    Automated medicine dispensing using Arduino with a Python GUI that reads prescriptions, locates
+                    medicines, and controls actuators using G-code.:contentReference[oaicite:2]{index=2}
                 </p>
-                <span>Python · Arduino · G-code · GUI Design</span>
+                <img src="assets/images/tabsort.jpg" alt="TAB SORT">
             </div>
 
-            <div class="project-card">
-                <h3>Mechanical & CAD Design Projects</h3>
+            <div class="project-card slide-up delay-2">
+                <h3>CAD / CAM Projects</h3>
                 <p>
-                    Design and prototyping of mechanical components and automation
-                    assemblies using CAD tools.
+                    Computer-aided design work including TabSort device components such as tablet sorting head and
+                    other assemblies.:contentReference[oaicite:3]{index=3}
                 </p>
-                <span>SolidWorks · Prototyping · Manufacturing</span>
+                <img src="assets/images/cadcam.jpg" alt="CAD CAM">
             </div>
 
         </div>
@@ -115,20 +94,19 @@
 </section>
 
 <!-- CONTACT -->
-<section id="contact" class="section dark">
-    <div class="container">
+<section id="contact" class="section light-bg">
+    <div class="container fade-in">
         <h2>Contact</h2>
-        <p>
-            Interested in collaboration or opportunities?
-        </p>
-        <p>
-            Email: <strong>your.email@example.com</strong><br>
-            LinkedIn: <strong>linkedin.com/in/yourprofile</strong>
-        </p>
+        <p>If you’d like to connect or discuss opportunities:</p>
+        <ul class="contact-list">
+            <li>Email: <strong>your.email@example.com</strong></li>
+            <li>LinkedIn: <a href="https://www.linkedin.com/in/yourprofile" target="_blank">linkedin.com/in/yourprofile</a></li>
+            <li>GitHub: <a href="https://github.com/yourusername" target="_blank">github.com/yourusername</a></li>
+        </ul>
     </div>
 </section>
 
-<footer>
+<footer class="footer">
     <p>© 2026 Heshan Sanjeewa</p>
 </footer>
 
