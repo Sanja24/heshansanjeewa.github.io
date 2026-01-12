@@ -19,30 +19,58 @@
   <div class="container fade-in">
     <h1>CAD / CAM Projects</h1>
     <p>
-      TabSort CAD design and CAD/CAM work such as Tablet Sorting Head and mechanical assemblies.
+      Mechanical design work focused on precision and manufacturability, including Tablet Sorting Heads and complex assemblies.
     </p>
 
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 2rem 0;">
-        <img src="../assets/images/cad1.jpg" alt="CAD TabSort" style="width: 100%; border-radius: 8px;">
-        <img src="../assets/images/cad2.jpg" alt="CAD Assembly" style="width: 100%; border-radius: 8px;">
-    </div>
+    <div class="cad-gallery">
+        <div class="gallery-item">
+            <img src="../assets/images/cad1.jpg" alt="TabSort CAD Design" class="gallery-img">
+            <div class="overlay-text">TabSort Sorting Head</div>
+        </div>
+        <div class="gallery-item">
+            <img src="../assets/images/cad2.jpg" alt="Mechanical Assembly" class="gallery-img">
+            <div class="overlay-text">Mechanical Assembly</div>
+        </div>
+        </div>
 
-    <h2>Overview</h2>
-    <p>Detailed mechanical design work focused on precision and manufacturability.</p>
+    <h2>Technical Overview</h2>
+    <p>Detailed design utilizing SolidWorks for modeling and generating manufacturing-ready engineering drawings.</p>
     
-    <h2>Technologies</h2>
-    <p><strong>SolidWorks · CAD Modeling · Engineering Drawings</strong></p>
-
     <div style="margin-top: 3rem;">
         <a href="../index.html#projects" class="btn-secondary">← Back to Portfolio</a>
     </div>
   </div>
 </section>
 
+<div id="lightbox" class="lightbox">
+    <span class="close-lightbox">&times;</span>
+    <img class="lightbox-content" id="lightbox-img">
+    <div id="caption"></div>
+</div>
+
 <footer class="footer">
   <p>© 2026 Heshan Sanjeewa</p>
 </footer>
 
 <script src="../js/main.js"></script>
+
+<script>
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const captionText = document.getElementById('caption');
+    const closeBtn = document.querySelector('.close-lightbox');
+
+    document.querySelectorAll('.gallery-img').forEach(image => {
+        image.onclick = () => {
+            lightbox.style.display = "block";
+            lightboxImg.src = image.src;
+            captionText.innerHTML = image.alt;
+        }
+    });
+
+    closeBtn.onclick = () => { lightbox.style.display = "none"; }
+    lightbox.onclick = (e) => { if(e.target !== lightboxImg) lightbox.style.display = "none"; }
+</script>
+
 </body>
 </html>
