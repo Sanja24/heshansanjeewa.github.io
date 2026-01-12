@@ -6,180 +6,121 @@
 
   <title>Heshan Sanjeewa | Mechatronics & Automation Engineer</title>
 
-  <meta name="description"
-        content="Portfolio of Heshan Sanjeewa – Mechatronics, Automation, Embedded Systems, Image Processing" />
+  <!-- SEO -->
+  <meta name="description" content="Graduate Mechatronics Engineer specializing in automation, embedded systems, image processing, and intelligent engineering solutions.">
+  <meta name="keywords" content="Mechatronics Engineer, Automation, Embedded Systems, Image Processing, Arduino, Python, CAD CAM">
+  <meta name="author" content="Heshan Sanjeewa">
 
-  <!-- IMPORTANT: Fixes GitHub Pages asset paths -->
+  <!-- OpenGraph -->
+  <meta property="og:title" content="Heshan Sanjeewa | Engineering Portfolio">
+  <meta property="og:description" content="Automation, Embedded Systems, Image Processing & Engineering Projects">
+  <meta property="og:image" content="assets/images/hero.jpg">
+  <meta property="og:type" content="website">
+
   <base href="/heshansanjeewa.github.io/">
 
-  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-  <!-- Styles -->
   <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
-<!-- ================= NAVBAR ================= -->
 <header class="navbar">
   <div class="container nav-flex">
     <div class="logo">Heshan<span>.</span></div>
 
-    <nav>
+    <button class="nav-toggle" aria-label="Toggle navigation">
+      ☰
+    </button>
+
+    <nav class="nav-menu">
       <ul>
         <li><a href="#about">About</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#contact">Contact</a></li>
-        <li>
-          <a class="cv-btn"
-             href="assets/cv/Heshan_Sanjeewa_CV.pdf"
-             download>
-             Download CV
-          </a>
-        </li>
+        <li><a class="cv-btn" href="assets/cv/Heshan_Sanjeewa_CV.pdf" download>Download CV</a></li>
+        <li><button id="theme-toggle">🌙</button></li>
       </ul>
     </nav>
   </div>
 </header>
 
-<!-- ================= HERO ================= -->
 <section class="hero section">
   <div class="container hero-flex">
-
     <div class="hero-text">
       <h1>Hi, I'm Heshan Sanjeewa</h1>
       <p class="subtitle">Mechatronics | Automation | Embedded Systems</p>
-
       <p>
         Graduate Mechatronics Engineer from SLTC Research University with hands-on
-        experience in automation systems, embedded hardware, and intelligent
-        image-based engineering solutions.
+        experience in automation systems, embedded hardware, and applied image processing.
       </p>
 
       <div class="hero-actions">
-        <a href="assets/cv/Heshan_Sanjeewa_CV.pdf"
-           class="btn-primary"
-           download>
-           Download CV
-        </a>
-
-        <a href="#projects" class="btn-secondary">
-          View Projects
-        </a>
+        <a href="assets/cv/Heshan_Sanjeewa_CV.pdf" class="btn-primary" download>Download CV</a>
+        <a href="#projects" class="btn-secondary">View Projects</a>
       </div>
     </div>
 
     <div class="hero-image">
       <img src="assets/images/hero.jpg" alt="Heshan Sanjeewa">
     </div>
-
   </div>
 </section>
 
-<!-- ================= ABOUT ================= -->
 <section id="about" class="section light-bg">
   <div class="container fade-in">
     <h2>About Me</h2>
-
     <p>
-      I specialize in integrating mechanical design, electronics, and software
-      to develop efficient real-world engineering solutions.
-      My interests include automation, computer vision, robotics,
-      and smart manufacturing systems.
+      I focus on developing intelligent engineering systems by integrating
+      mechanical design, electronics, and software.
+      My interests include automation, robotics, smart manufacturing, and computer vision.
     </p>
   </div>
 </section>
 
-<!-- ================= PROJECTS ================= -->
 <section id="projects" class="section">
   <div class="container">
-    <h2>Selected Projects</h2>
+    <h2>Engineering Projects</h2>
 
     <div class="projects-grid">
 
-      <a href="projects/nutrient-assessment.html"
-         class="project-card slide-up">
-        <img src="assets/images/nutrient.jpg"
-             alt="Plant Nutrient Assessment System">
-        <h3>Plant Nutrient Assessment System</h3>
-        <p>
-          Non-destructive nutrient deficiency detection using
-          image processing and deep learning.
-        </p>
+      <a href="projects/nutrient-assessment.html" class="project-card slide-up">
+        <h3>Plant Nutrient Assessment System (NUTRILEAF)</h3>
+        <p>Non-destructive nutrient deficiency detection using image processing and deep learning.</p>
       </a>
 
-      <a href="projects/medicine-dispensing.html"
-         class="project-card slide-up delay-1">
-        <img src="assets/images/tabsort.jpg"
-             alt="Medicine Dispensing System">
-        <h3>Medicine Dispensing System (TAB SORT 1.9)</h3>
-        <p>
-          Automated tablet dispensing system using Arduino,
-          G-code control, and a Python GUI.
-        </p>
+      <a href="projects/medicine-dispensing.html" class="project-card slide-up delay-1">
+        <h3>Medicine Dispensing System – TAB SORT 1.9</h3>
+        <p>Automated tablet dispensing using Arduino, G-code, and Python GUI.</p>
       </a>
 
-      <a href="projects/cad-projects.html"
-         class="project-card slide-up delay-2">
-        <img src="assets/images/cad1.jpg"
-             alt="CAD CAM Projects">
-        <h3>CAD / CAM Projects</h3>
-        <p>
-          Mechanical design, assemblies, and
-          manufacturing-ready CAD models.
-        </p>
+      <a href="projects/cad-projects.html" class="project-card slide-up delay-2">
+        <h3>CAD / CAM & Mechanical Design</h3>
+        <p>Mechanical assemblies, CAD modeling, and manufacturing-ready designs.</p>
       </a>
 
-      <a href="projects/other-projects.html"
-         class="project-card slide-up delay-3">
-        <img src="assets/images/cad2.jpg"
-             alt="Other Engineering Projects">
+      <a href="projects/other-projects.html" class="project-card slide-up delay-3">
         <h3>Other Engineering Projects</h3>
-        <p>
-          Robotics, PCB design, vibration analysis,
-          and academic engineering work.
-        </p>
+        <p>Robotics, PCB design, vibration analysis, and academic work.</p>
       </a>
 
     </div>
   </div>
 </section>
 
-<!-- ================= CONTACT ================= -->
 <section id="contact" class="section light-bg">
   <div class="container fade-in">
     <h2>Contact</h2>
-
     <p>Email: <strong>your.email@example.com</strong></p>
-
-    <p>
-      LinkedIn:
-      <a href="https://linkedin.com/in/yourprofile"
-         target="_blank"
-         rel="noopener">
-         linkedin.com/in/yourprofile
-      </a>
-    </p>
-
-    <p>
-      GitHub:
-      <a href="https://github.com/yourusername"
-         target="_blank"
-         rel="noopener">
-         github.com/yourusername
-      </a>
-    </p>
+    <p>LinkedIn: <a href="https://linkedin.com/in/yourprofile" target="_blank">linkedin.com/in/yourprofile</a></p>
+    <p>GitHub: <a href="https://github.com/yourusername" target="_blank">github.com/yourusername</a></p>
   </div>
 </section>
 
-<!-- ================= FOOTER ================= -->
 <footer class="footer">
   <p>© 2026 Heshan Sanjeewa</p>
 </footer>
 
-<!-- Scripts -->
 <script src="js/main.js"></script>
-
 </body>
 </html>
