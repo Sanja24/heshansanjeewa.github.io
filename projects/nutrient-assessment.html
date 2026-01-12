@@ -4,38 +4,73 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Plant Nutrient Assessment System | Heshan Sanjeewa</title>
+  
   <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
 
 <header class="navbar">
   <div class="container nav-flex">
-    <a href="../index.html" class="logo">← Back</a>
-    <button id="theme-toggle">🌙</button>
+    <a href="../index.html" class="logo">Heshan<span>.</span></a>
+    <nav class="nav-menu">
+      <ul>
+        <li><a href="../index.html#projects">Projects</a></li>
+        <li><button id="theme-toggle" aria-label="Toggle Dark Mode">🌙</button></li>
+      </ul>
+    </nav>
+    <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
   </div>
 </header>
 
 <section class="section">
-  <div class="container fade-in">
-    <h1>Plant Nutrient Assessment System (NUTRILEAF)</h1>
-    <p>A portable, low-cost system designed to detect nutrient deficiencies in corn leaves using image processing and deep learning techniques.</p>
+  <div class="container">
+    <div class="fade-in">
+      <h1>Plant Nutrient Assessment System (NUTRILEAF)</h1>
+      <p class="subtitle">Mechatronics | Computer Vision | Deep Learning</p>
+      
+      <p style="margin: 1.5rem 0;">
+        A portable, low-cost system designed to detect nutrient deficiencies in corn leaves 
+        using image processing and deep learning techniques. This project focuses on 
+        bridging the gap between lab-grade analysis and real-world farming environments.
+      </p>
+    </div>
 
-    <h3>Technologies</h3>
-    <ul>
-      <li>Python, OpenCV, TensorFlow</li>
-      <li>Portable microscope camera</li>
-      <li>Machine learning classification</li>
-    </ul>
+    <div id="dynamic-gallery" 
+         data-project="nutrileaf" 
+         data-count="3" 
+         class="slide-up">
+    </div>
+    
+    <div id="lightbox" class="lightbox-modal">
+        <span class="close-lightbox">&times;</span>
+        <img class="lightbox-content" id="lightbox-img" alt="Enlarged project view">
+    </div>
 
-    <h3>Outcome</h3>
-    <p>Enabled non-destructive, real-time nutrient analysis suitable for field use.</p>
+    <div class="fade-in delay-1" style="margin-top: 3rem;">
+      <h3>Technologies Involved</h3>
+      <ul style="margin: 1rem 0 2rem 1.5rem;">
+        <li><strong>Software:</strong> Python, OpenCV, TensorFlow/Keras for classification.</li>
+        <li><strong>Hardware:</strong> Portable microscopic camera, customized lighting mount.</li>
+        <li><strong>Method:</strong> Non-destructive image acquisition and real-time inference.</li>
+      </ul>
 
-    <a href="../index.html#projects" class="btn-secondary">← Back to Portfolio</a>
+      <h3>Key Outcome</h3>
+      <p>
+        The system successfully enabled real-time, non-destructive nutrient analysis suitable 
+        for field use, providing farmers with immediate data to optimize fertilizer application.
+      </p>
+
+      <div style="margin-top: 3rem;">
+        <a href="../index.html#projects" class="btn-secondary">← Back to Portfolio</a>
+      </div>
+    </div>
   </div>
 </section>
 
 <footer class="footer">
-  <p>© 2026 Heshan Sanjeewa</p>
+  <div class="container">
+    <p>© 2026 Heshan Sanjeewa | Mechatronics & Automation Engineer</p>
+  </div>
 </footer>
 
 <script src="../js/main.js"></script>
