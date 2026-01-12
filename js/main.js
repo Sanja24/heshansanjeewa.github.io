@@ -1,25 +1,20 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // --- 1. Mobile Navigation Logic ---
+    // 1. Mobile nav (Fixed to not crash on subpages)
     const toggle = document.querySelector('.nav-toggle');
     const menu = document.querySelector('.nav-menu');
-
     if (toggle && menu) {
         toggle.addEventListener('click', () => {
             menu.classList.toggle('active');
         });
     }
 
-    // --- 2. Dark Mode Management ---
+    // 2. Dark mode
     const themeToggle = document.getElementById('theme-toggle');
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-
-    // Apply theme on initial load
     if (localStorage.theme === 'dark' || (!localStorage.theme && prefersDark)) {
         document.body.classList.add('dark');
         if (themeToggle) themeToggle.textContent = '☀️';
     }
-
-    // Manual toggle event
     if (themeToggle) {
         themeToggle.addEventListener('click', () => {
             document.body.classList.toggle('dark');
@@ -29,9 +24,8 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- 3. Automated Project Gallery Loader ---
+    // 3. THE GALLERY LOADER (This part was missing!)
     const galleryContainer = document.getElementById('dynamic-gallery');
-    
     if (galleryContainer) {
         const project = galleryContainer.getAttribute('data-project');
         const count = parseInt(galleryContainer.getAttribute('data-count'));
@@ -40,29 +34,24 @@ document.addEventListener('DOMContentLoaded', () => {
             const card = document.createElement('div');
             card.className = 'gallery-card fade-in';
 
-            // Create Image element
             const img = document.createElement('img');
             img.src = `../assets/images/${project}/${i}.jpg`;
-            img.alt = `${project} documentation image ${i}`;
             
-            // Create Description element (Fetching from matching .txt file)
             const descDiv = document.createElement('div');
             descDiv.className = 'image-description';
             descDiv.innerText = "Loading description...";
 
+            // Fetch the matching .txt file
             fetch(`../assets/images/${project}/${i}.txt`)
-                .then(response => response.ok ? response.text() : "No additional description available.")
+                .then(response => response.ok ? response.text() : "")
                 .then(text => { descDiv.innerText = text; })
                 .catch(() => { descDiv.style.display = 'none'; });
 
-            // Lightbox Trigger on Image click
             img.onclick = () => {
                 const lb = document.getElementById('lightbox');
                 const lbImg = document.getElementById('lightbox-img');
-                if (lb && lbImg) {
-                    lb.style.display = 'flex';
-                    lbImg.src = img.src;
-                }
+                lb.style.display = 'flex';
+                lbImg.src = img.src;
             };
 
             card.appendChild(img);
@@ -71,17 +60,15 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // --- 4. Lightbox Closing Logic ---
+    // Lightbox Close
     const lb = document.getElementById('lightbox');
     if (lb) {
-        lb.onclick = (e) => { 
-            if (e.target.id !== 'lightbox-img') lb.style.display = 'none'; 
-        };
-        const closeBtn = document.querySelector('.close-lightbox');
-        if (closeBtn) closeBtn.onclick = () => lb.style.display = 'none';
+        lb.onclick = (e) => { if (e.target.id !== 'lightbox-img') lb.style.display = 'none'; };
+        const close = document.querySelector('.close-lightbox');
+        if (close) close.onclick = () => lb.style.display = 'none';
     }
 
-    // --- 5. Scroll Animations ---
+    // Scroll animations
     const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
