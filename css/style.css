@@ -169,12 +169,13 @@ nav a {
 }
 
 /* ==========================================================================
-   5. Engineering Project Cards (Home Page)
+   5. EXACT SIZE PROJECT CARDS (The Fix)
    ========================================================================== */
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
+  align-items: stretch; /* Forces all cards in a row to the same height */
 }
 
 .project-card {
@@ -185,29 +186,30 @@ nav a {
   transition: transform 0.3s ease;
   text-decoration: none;
   color: inherit;
-  /* Flex Fix for height alignment */
+  
+  /* Flexbox makes the card components fill the vertical space */
   display: flex;
   flex-direction: column;
-  height: 100%;
+  height: 100%; 
 }
 
 .project-card:hover {
   transform: translateY(-8px);
 }
 
-/* Fixed image container to prevent distortion */
+/* Fixed Image Height */
 .card-thumb {
   width: 100%;
-  height: 220px;
+  height: 220px; /* All project images will be exactly this high */
   overflow: hidden;
   background: #e2e8f0;
-  flex-shrink: 0; /* Ensures the thumbnail doesn't shrink when text is long */
+  flex-shrink: 0;
 }
 
 .card-thumb img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Crops image to fill space perfectly */
+  object-fit: cover; /* Crops the image to fill the 220px box perfectly */
   object-position: center;
   display: block;
   transition: transform 0.5s ease;
@@ -217,26 +219,40 @@ nav a {
   transform: scale(1.08);
 }
 
-/* Content area that grows to fill the card */
+/* Fixed Text Alignment */
 .card-content {
   padding: 1.5rem;
-  flex-grow: 1; 
+  flex-grow: 1; /* Pushes the card content to match the tallest neighbor */
   display: flex;
   flex-direction: column;
 }
 
+/* Force titles to take up the same space (2 lines worth) */
 .card-content h3 {
   margin-bottom: 0.75rem;
-  font-size: 1.25rem;
+  font-size: 1.2rem;
+  line-height: 1.4;
+  min-height: 2.8em; 
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
+/* Force descriptions to take up the same space (3 lines worth) */
 .card-content p {
   color: var(--gray);
   font-size: 0.95rem;
+  line-height: 1.5;
+  min-height: 4.5em; 
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 /* ==========================================================================
-   6. Dynamic Gallery & Lightbox (Sub-pages)
+   6. Dynamic Gallery & Lightbox
    ========================================================================== */
 #dynamic-gallery {
   display: grid;
@@ -253,21 +269,12 @@ nav a {
   transition: transform 0.3s ease;
 }
 
-.gallery-card:hover {
-  transform: translateY(-5px);
-}
-
 .gallery-card img {
   width: 100%;
   height: 240px;
   object-fit: cover;
   cursor: zoom-in;
   display: block;
-  transition: transform 0.4s ease;
-}
-
-.gallery-card:hover img {
-  transform: scale(1.05);
 }
 
 .image-description {
@@ -275,7 +282,6 @@ nav a {
   font-size: 0.95rem;
   color: var(--gray);
   border-top: 1px solid rgba(0,0,0,0.05);
-  line-height: 1.4;
 }
 
 .lightbox-modal {
@@ -295,7 +301,6 @@ nav a {
   max-width: 90%;
   max-height: 85vh;
   border-radius: 8px;
-  animation: zoom 0.3s ease-out;
 }
 
 .close-lightbox {
@@ -308,13 +313,8 @@ nav a {
   cursor: pointer;
 }
 
-@keyframes zoom {
-  from { transform: scale(0.7); opacity: 0; }
-  to { transform: scale(1); opacity: 1; }
-}
-
 /* ==========================================================================
-   7. Footer & Contact
+   7. Footer, Contact & Animations
    ========================================================================== */
 .footer {
   text-align: center;
@@ -324,17 +324,8 @@ nav a {
 }
 
 .text-center { text-align: center; }
+.contact-links { margin-top: 1.5rem; display: flex; gap: 1rem; justify-content: center; }
 
-.contact-links {
-  margin-top: 1.5rem;
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-}
-
-/* ==========================================================================
-   8. Animations
-   ========================================================================== */
 .fade-in, .slide-up {
   opacity: 0;
   transition: opacity 0.6s ease-out, transform 0.6s ease-out;
@@ -348,19 +339,12 @@ nav a {
 .delay-3 { transition-delay: 0.6s; }
 
 /* ==========================================================================
-   9. Responsive Design & Dark Mode
+   8. Responsive & Dark Mode
    ========================================================================== */
 @media (max-width: 768px) {
-  .hero-flex {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-  nav ul {
-    display: none;
-  }
-  .nav-toggle {
-    display: block;
-  }
+  .hero-flex { grid-template-columns: 1fr; text-align: center; }
+  nav ul { display: none; }
+  .nav-toggle { display: block; }
   .nav-menu.active {
     display: block;
     position: absolute;
@@ -370,11 +354,7 @@ nav a {
     width: 100%;
     border-bottom: 1px solid #e5e7eb;
   }
-  .nav-menu.active ul {
-    display: flex;
-    flex-direction: column;
-    padding: 1rem;
-  }
+  .nav-menu.active ul { display: flex; flex-direction: column; padding: 1rem; }
 }
 
 body.dark {
@@ -384,11 +364,5 @@ body.dark {
   --light: #020617;
 }
 
-body.dark .navbar {
-  background: #020617;
-  border-bottom: 1px solid #334155;
-}
-
-body.dark .image-description {
-  border-top: 1px solid #334155;
-}
+body.dark .navbar { background: #020617; border-bottom: 1px solid #334155; }
+body.dark .image-description { border-top: 1px solid #334155; }
