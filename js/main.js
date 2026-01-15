@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Mobile nav (Fixed to not crash on subpages)
+    // 1. Mobile nav
     const toggle = document.querySelector('.nav-toggle');
     const menu = document.querySelector('.nav-menu');
     if (toggle && menu) {
@@ -10,21 +10,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 2. Dark mode
     const themeToggle = document.getElementById('theme-toggle');
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    if (localStorage.theme === 'dark' || (!localStorage.theme && prefersDark)) {
+    const updateThemeIcon = (isDark) => {
+        themeToggle.textContent = isDark ? '☀️' : '🌙';
+    };
+
+    if (localStorage.theme === 'dark' || (!localStorage.theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
         document.body.classList.add('dark');
-        if (themeToggle) themeToggle.textContent = '☀️';
+        updateThemeIcon(true);
     }
+
     if (themeToggle) {
         themeToggle.addEventListener('click', () => {
             document.body.classList.toggle('dark');
             const isDark = document.body.classList.contains('dark');
             localStorage.theme = isDark ? 'dark' : 'light';
-            themeToggle.textContent = isDark ? '☀️' : '🌙';
+            updateThemeIcon(isDark);
         });
     }
 
-    // 3. THE GALLERY LOADER (This part was missing!)
+    // 3. ENHANCED GALLERY LOADER
     const galleryContainer = document.getElementById('dynamic-gallery');
     if (galleryContainer) {
         const project = galleryContainer.getAttribute('data-project');
@@ -34,24 +38,26 @@ document.addEventListener('DOMContentLoaded', () => {
             const card = document.createElement('div');
             card.className = 'gallery-card fade-in';
 
+            // Image with loading logic
             const img = document.createElement('img');
             img.src = `../assets/images/${project}/${i}.jpg`;
+            img.alt = `Project Image ${i}`;
+            img.loading = "lazy";
             
             const descDiv = document.createElement('div');
             descDiv.className = 'image-description';
-            descDiv.innerText = "Loading description...";
+            descDiv.innerText = "Checking for description...";
 
-            // Fetch the matching .txt file
             fetch(`../assets/images/${project}/${i}.txt`)
                 .then(response => response.ok ? response.text() : "")
-                .then(text => { descDiv.innerText = text; })
+                .then(text => { 
+                    if(text.trim()) descDiv.innerText = text; 
+                    else descDiv.style.display = 'none';
+                })
                 .catch(() => { descDiv.style.display = 'none'; });
 
             img.onclick = () => {
-                const lb = document.getElementById('lightbox');
-                const lbImg = document.getElementById('lightbox-img');
-                lb.style.display = 'flex';
-                lbImg.src = img.src;
+                openLightbox(img.src);
             };
 
             card.appendChild(img);
@@ -60,12 +66,19 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Lightbox Close
+    // Lightbox Logic
     const lb = document.getElementById('lightbox');
+    const lbImg = document.getElementById('lightbox-img');
+
+    function openLightbox(src) {
+        lb.style.display = 'flex';
+        lbImg.src = src;
+    }
+
     if (lb) {
-        lb.onclick = (e) => { if (e.target.id !== 'lightbox-img') lb.style.display = 'none'; };
-        const close = document.querySelector('.close-lightbox');
-        if (close) close.onclick = () => lb.style.display = 'none';
+        lb.onclick = (e) => {
+            if (e.target !== lbImg) lb.style.display = 'none';
+        };
     }
 
     // Scroll animations
@@ -76,7 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 entry.target.style.transform = 'translateY(0)';
             }
         });
-    }, { threshold: 0.15 });
+    }, { threshold: 0.1 });
 
     document.querySelectorAll('.fade-in, .slide-up').forEach(el => observer.observe(el));
 });

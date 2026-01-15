@@ -312,3 +312,76 @@ body.dark .navbar {
 body.dark .image-description {
   border-top: 1px solid #334155;
 }
+
+/* Add these to your existing style.css */
+
+/* Skills Grid */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.skill-category {
+    background: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 12px;
+    border-left: 4px solid var(--primary);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.skill-category h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+/* Updated Project Cards */
+.card-thumb {
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+    background: #e2e8f0;
+}
+
+.card-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.project-card:hover .card-thumb img {
+    transform: scale(1.1);
+}
+
+.card-content {
+    padding: 1rem;
+}
+
+/* Lightbox Enhancements */
+.lightbox-nav {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 2rem;
+    pointer-events: none;
+}
+
+.lb-btn {
+    background: rgba(255,255,255,0.1);
+    color: white;
+    border: none;
+    font-size: 2rem;
+    padding: 1rem;
+    cursor: pointer;
+    pointer-events: auto;
+    border-radius: 50%;
+}
+
+.lb-btn:hover { background: var(--primary); }
+
+.text-center { text-align: center; }
+.contact-links { margin-top: 1.5rem; display: flex; gap: 1rem; justify-content: center; }
