@@ -25,9 +25,7 @@
   <div class="container">
     <div class="fade-in">
       <h1>Medicine Dispensing System – TAB SORT 1.9</h1>
-      <p style="margin: 1rem 0; color: var(--gray);">
-        Automated medicine dispensing system utilizing Arduino and a Python-based graphical interface for precision prescription handling.
-      </p>
+      <p class="subtitle">Mechatronic System Design & Automation Control</p>
     </div>
 
     <div id="dynamic-gallery" data-project="tabsort" data-count="3" class="slide-up"></div>
@@ -37,18 +35,43 @@
         <img class="lightbox-content" id="lightbox-img">
     </div>
 
-    <div class="fade-in delay-1" style="margin-top: 3rem;">
-      <h2>Project Overview</h2>
-      <p style="margin-top: 1rem;">
-        The system reads prescriptions from text files, locates medicines via bin configuration, and controls actuators via G-code communication.
-      </p>
+    <div class="case-study fade-in delay-1">
+      <div class="tech-box">
+        <h3>01. Problem Statement</h3>
+        <p>In pharmaceutical environments, manual dispensing of medications is prone to human error and inefficiency. This project, initially conceptualized as "Pillpilot," was developed to automate the sorting and dispensing of tablets based on digital prescriptions. The goal was to create a high-precision, reliable system that bridges digital medical records with physical hardware execution.</p>
+      </div>
 
-      <h3 style="margin-top: 2rem;">Key Features</h3>
-      <ul style="margin: 1rem 0 2rem 1.5rem;">
-        <li>Python GUI for real-time prescription processing.</li>
-        <li>Arduino-based control system with stepper motors.</li>
-        <li>Precision G-code communication for actuator positioning.</li>
+      <h3>02. System Architecture</h3>
+      <p>The system operates through a multi-layered architecture, integrating high-level software logic with low-level hardware control.</p>
+      
+      
+
+      <div class="spec-grid">
+        <div class="spec-item">
+          <strong>Software Layer (Python)</strong>
+          <p>Developed using <strong>PyQt5</strong>, the GUI parses prescription text files in real-time. It maps medication names to physical bin coordinates using a dynamic configuration database, ensuring that any bin layout can be accommodated without hard-coding locations.</p>
+        </div>
+        <div class="spec-item">
+          <strong>Communication Protocol</strong>
+          <p>The system utilizes <strong>G-code</strong> for machine instructions. By translating prescription data into standardized CNC commands, the system achieves universal compatibility and high-precision movement control over the Serial interface.</p>
+        </div>
+        <div class="spec-item">
+          <strong>Hardware & Control (Arduino)</strong>
+          <p>An <strong>Arduino-based</strong> firmware interprets the G-code to drive <strong>NEMA stepper motors</strong>. This ensures sub-millimeter accuracy for the dispensing head as it navigates the bin array to retrieve and dispense specific dosages.</p>
+        </div>
+      </div>
+
+      <h3>03. Key Engineering Features</h3>
+      <ul class="feature-list">
+        <li><strong>Real-time Prescription Parsing:</strong> Automated reading of `.txt` prescriptions to eliminate manual entry errors.</li>
+        <li><strong>Scalable Bin Configuration:</strong> The software supports custom bin mapping, allowing the hardware to be scaled for larger pharmacies.</li>
+        <li><strong>Safety Interlocks:</strong> Integrated logic to verify tablet selection before dispensing, ensuring pharmaceutical compliance.</li>
       </ul>
+
+      <div class="tech-box">
+        <h3>04. Technical Outcomes</h3>
+        <p>TAB SORT 1.9 demonstrates a successful integration of <strong>PyQt5 GUI development</strong>, <strong>G-code automation</strong>, and <strong>embedded systems</strong>. The project showcases the transition from a software-based medicine manager to a fully realized mechatronic solution capable of physical task execution.</p>
+      </div>
 
       <div style="margin-top: 3rem;">
         <a href="../index.html#projects" class="btn-secondary">← Back to Portfolio</a>
